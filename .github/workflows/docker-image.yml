@@ -13,11 +13,13 @@ jobs:
     steps:
       - name: "Build:checkout"
         uses: actions/checkout@v2
-      - name: 'Build:dockerimage'
-        uses: docker/build-push-action@v2
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
         with:
-          registry: ghcr.io
           username: "MortyN"
           password: ${{ secrets.GHCR_TOKEN }}
-          repository: mortyn/piclustermetrics
+      - name: 'Build:dockerimage'
+        uses: docker/build-push-action@v3
+        with:
+          push: true
           tags: latest
