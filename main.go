@@ -22,4 +22,5 @@ func main() {
 	fmt.Println("Started backend on port 8080")
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
+
 }
