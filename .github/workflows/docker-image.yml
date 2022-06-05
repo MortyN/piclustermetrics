@@ -29,4 +29,4 @@ jobs:
         run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         
       - name: Build & Push Docker image
-        run: docker buildx build -t ghcr.io/mortyn/piclustermetrics:${GITHUB_SHA} -f . --push --platform=linux/arm64,linux/amd64 .
+        run: docker buildx build -t ghcr.io/mortyn/piclustermetrics:${GITHUB_SHA} -f ./Dockerfile --push --platform=linux/arm64,linux/amd64 .
