@@ -3,8 +3,11 @@ FROM arm64v8/golang:1.18.3-alpine3.15
 WORKDIR /app
 
 COPY go.mod ./
+COPY go.sum ./
 
 RUN go mod download
+
+RUN go mod tidy
 
 COPY *.go ./
 
