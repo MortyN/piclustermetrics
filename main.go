@@ -36,7 +36,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	if temp && node {
 
-		tempString := tempval[0][:2] + "." + tempval[0][:len(tempval[0])-2]
+		tempString := tempval[0][:2] + "." + tempval[0][len(tempval[0])-3:]
 		tempFloat, err := strconv.ParseFloat(tempString, 32)
 
 		if err != nil {
