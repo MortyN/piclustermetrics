@@ -7,8 +7,6 @@ COPY go.sum ./
 
 RUN go mod download
 
-RUN go mod tidy
-
 COPY *.go ./
 
 RUN go build -o /piclustermetrics
