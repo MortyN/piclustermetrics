@@ -73,5 +73,4 @@ func main() {
 	http.Handle("/metrics", promhttp.Handler())
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
-
 }
