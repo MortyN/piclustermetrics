@@ -42,4 +42,4 @@ jobs:
           -H "Authorization: ${{ secrets.ACTIONS_PAT_KEY }}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/$HelmRepo/dispatches \
-          -d '{"event_type":"bump_appversion","client_payload":{"appversion":sha:352353fj23f23f232f, "helmchartdir": "$ChartLocation"}}'
+          -d '{"event_type":"bump_appversion","client_payload":{"appversion": "sha:352353fj23f23f232f", "helmchartdir": "$ChartLocation"}}'
