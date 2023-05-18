@@ -35,7 +35,7 @@ jobs:
         env:
           HelmRepo: MortyN/helm-repo
           ChartLocation: charts/piclustermetrics/Chart.yaml
-          AppVersion: ${GITHUB_SHA}
+          AppVersion: $GITHUB_SHA
         run: |
           curl -L \
           -X POST \
